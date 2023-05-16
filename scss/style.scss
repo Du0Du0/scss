@@ -46,18 +46,34 @@ body {
 						transition-property: opacity transform;
 						transition-duration: 1s;
 
-						&:nth-of-type(1) {
-							transition-delay: 0s;
+						/*
+						through는 다음 나오는 숫자 포함 (이하)
+						to는 다음 나오는 숫자 미포함 (미만)
+						*/
+						@for $i from 0 through 3 {
+							
+							// SCSS에서 반복문 처리시 안쪽에서는 변수를
+							// 바로 치환가능하나 선택자에서는 #{}로 감싸야지
+							// 연산이 가능 
+							// (#{1+$i})
+							
+							&:nth-of-type(#{1 + $i}) {
+							transition-delay: 0.2s * $i;
 						}
-						&:nth-of-type(2) {
-							transition-delay: 0.2s;
-						}
-						&:nth-of-type(3) {
-							transition-delay: 0.4s;
-						}
-						&:nth-of-type(4) {
-							transition-delay: 0.6s;
-						}
+					}
+
+						// &:nth-of-type(1) {
+						// 	transition-delay: 0s;
+						// }
+						// &:nth-of-type(2) {
+						// 	transition-delay: 0.2s;
+						// }
+						// &:nth-of-type(3) {
+						// 	transition-delay: 0.4s;
+						// }
+						// &:nth-of-type(4) {
+						// 	transition-delay: 0.6s;
+						// }
 
             h2 {
                 font-family: Arial, Helvetica, sans-serif;

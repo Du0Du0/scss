@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0px;
   padding: 0px;
@@ -37,6 +38,10 @@ body .wrap .item {
   opacity: 0;
   transition-property: opacity transform;
   transition-duration: 1s;
+  /*
+  through는 다음 나오는 숫자 포함 (이하)
+  to는 다음 나오는 숫자 미포함 (미만)
+  */
 }
 body .wrap .item:nth-of-type(1) {
   transition-delay: 0s;
