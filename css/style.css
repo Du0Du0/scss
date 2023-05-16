@@ -40,6 +40,28 @@ body .wrap .item h2 {
   color: blue;
   margin-bottom: 15px;
 }
+body .wrap .item:nth-of-type(odd) a {
+  display: block;
+  width: 100px;
+  height: 40px;
+  background: hotpink;
+  border-radius: 25px;
+  text-align: center;
+  color: #fff;
+  line-height: 30px;
+  margin-top: 15px;
+}
+body .wrap .item:nth-of-type(even) a {
+  display: block;
+  width: 150px;
+  height: 40px;
+  background: grey;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  line-height: 30px;
+  margin-top: 15px;
+}
 body .wrap .item:hover {
   background: blue;
 }

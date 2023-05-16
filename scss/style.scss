@@ -1,9 +1,23 @@
 @import 'reset';
 
+@mixin button($bg: grey,$wid: 100px, $ht: 30px) {
+	display: block;
+							width: $wid;
+							height: $btnHeight;
+							background: $bg;
+							border-radius: $ht/2;
+							text-align: center;
+							color: #fff;
+							line-height: 30px;
+							margin-top: 15px;
+}
+
 $bg: #fff;
 $sizeTitle: 20px;
 $colorTit: blue;
 $hoverColor: yellow;
+$btnHeight: 40px;
+$btnRadius: 0px;
 
 body {
     background: #efefef;
@@ -28,8 +42,6 @@ body {
             border-radius: 10px;
             box-shadow: 5px 5px 20px #ddd;
 
-    
-
             h2 {
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: $sizeTitle;
@@ -37,17 +49,29 @@ body {
                 margin-bottom: 15px;
                 }
 
-                //hover styling
-                &:hover {
-                    background: $colorTit;
-                    
-                    h2,
-                    p,
-                    a {
-                        color: $hoverColor; 
-                    }
-            }
-            
+						&:nth-of-type(odd) {
+							a {
+								@include button($bg:hotpink, $ht: 50px);
+							}
+						}
+						&:nth-of-type(even) {
+							a {
+								@include button($wid: 150px);
+							}
+						}
         }
+				 //hover styling
+				 .item:hover {
+					background: $colorTit;
+					
+					h2,
+					p,
+					a {
+							color: $hoverColor; 
+					}
+			}
     }
 }
+
+
+
