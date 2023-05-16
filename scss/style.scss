@@ -12,9 +12,16 @@
 							margin-top: 15px;
 }
 
+$titColors: (
+	1: blue,
+	2: hotpink,
+	3: lightgreen,
+	4: violet,
+);
+
 $bg: #fff;
 $sizeTitle: 20px;
-$colorTit: blue;
+$hoverBg: blue;
 $hoverColor: yellow;
 $btnHeight: 40px;
 $btnRadius: 0px;
@@ -62,6 +69,15 @@ body {
 						}
 					}
 
+					//@each문을 활용하여 규칙성이 없는 값들을 반복처리
+					@each $key, $value in $titColors {
+						&:nth-of-type(#{$key}) {
+							h2 {
+								color: $value;
+							}
+						}
+					}
+
 						// &:nth-of-type(1) {
 						// 	transition-delay: 0s;
 						// }
@@ -78,7 +94,6 @@ body {
             h2 {
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: $sizeTitle;
-                color: $colorTit;
                 margin-bottom: 15px;
                 }
 
@@ -95,12 +110,12 @@ body {
         }
 				 //hover styling
 				 .item:hover {
-					background: $colorTit;
+					background: $hoverBg;
 					
 					h2,
 					p,
 					a {
-							color: $hoverColor; 
+							color: $hoverBg; 
 					}
 			}
 
